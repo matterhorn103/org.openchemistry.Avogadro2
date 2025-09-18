@@ -73,7 +73,7 @@ modules:
       # Clone but not recursively, only want CMake files and dir structure
       - type: git
         url: https://github.com/OpenChemistry/openchemistry.git
-        commit: c20145ef07c04704449a1f4ab7ebb9725b4d8bbd
+        commit: 46de07ebd407077bbe3a600639ef17ea40bd0171
         disable-shallow-clone: true
         disable-submodules: true
 
@@ -81,17 +81,17 @@ modules:
       # avogadroapp
       - type: git
         url: https://github.com/OpenChemistry/avogadroapp.git
-        commit: aa1f8cd2d5540d6844c0a399cc4b214e080b0808
+        commit: 836bf58da0a031ea7d4afcc9e378b21b41eef0ea
         dest: avogadroapp
       # avogadrolibs
       - type: git
         url: https://github.com/OpenChemistry/avogadrolibs.git
-        commit: 66d4e054de2d6bbefa3cbb09f7e7e355e8e8145e
+        commit: dbdaa4c1e20ac594c4b96733c7be92d575d0f9e5
         dest: avogadrolibs
       # avogadro-i18n
       - type: git
         url: https://github.com/OpenChemistry/avogadro-i18n.git
-        commit: 07bee855ee8f34b64caf804e69cc4c0b34112ca3
+        commit: f9c891faebd80ec8f20f0920023d36a9146bb902
         dest: avogadro-i18n
       # avogadrogenerators
       - type: git
@@ -101,7 +101,7 @@ modules:
       # crystals
       - type: git
         url: https://github.com/OpenChemistry/crystals.git
-        commit: 28404bd4cceae4c7a688f78b50a59ea819186ccd
+        commit: 7adea78a682c1fa793825c85e67de531005413ff
         dest: crystals
       # fragments
       - type: git
@@ -117,8 +117,8 @@ modules:
       # Now fetch third-party stuff where the source is expected in `openchemistry/thirdparty`
       # VTK
       - type: archive
-        url: https://github.com/Kitware/VTK/archive/4f02ae83179c6a1542ac3c335c73dea976578c63.tar.gz
-        sha256: 2d2da63dc660016628fc41c3a201e24d49a7e67b0d5d6fbbe655fb23f5099929
+        url: https://github.com/Kitware/VTK/archive/9bd2ddd86ca49ca379e294cdceef8a16bbb64ea5.tar.gz
+        sha256: 3fe9693b7ac60fecd98209e16f64fa92addcd173e9e06bf24fc9c46f09390154
         dest: thirdparty/VTK
       
       # Other third-party sources would normally be downloaded by Avogadro build on the fly
@@ -145,16 +145,6 @@ modules:
       - type: file
         url: https://github.com/libarchive/libarchive/archive/v3.7.7.tar.gz
         sha256: fa62384995e8aa4f5a901c184fb5c91e56a29e24c05b6881a7f8fd5bbea694d2
-        dest: Downloads
-      # msgpackc
-      - type: file
-        url: https://github.com/msgpack/msgpack-c/releases/download/cpp-3.3.0/msgpack-3.3.0.tar.gz
-        sha256: 6e114d12a5ddb8cb11f669f83f32246e484a8addd0ce93f274996f1941c1f07b
-        dest: Downloads
-      # mmtf-cpp
-      - type: file
-        url: https://github.com/rcsb/mmtf-cpp/archive/refs/tags/v1.1.0.tar.gz
-        sha256: 021173bdc1814b1d0541c4426277d39df2b629af53151999b137e015418f76c0
         dest: Downloads
       # libmsym
       - type: file
