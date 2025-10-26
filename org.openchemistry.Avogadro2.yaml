@@ -20,6 +20,27 @@ modules:
   # Needed to compile glew apparently
   - shared-modules/glu/glu-9.json
 
+  # Pixi, for running Python plugins for Avogadro and managing their dependencies
+  - name: pixi
+    buildsystem: simple
+    build-commands:
+      - ls -la .
+      - tar -xf pixi.tar.gz -z
+      - install -Dm755 pixi /app/bin/pixi
+    sources:
+      - type: file
+        url: https://github.com/prefix-dev/pixi/releases/download/v0.56.0/pixi-x86_64-unknown-linux-musl.tar.gz
+        sha256: 054293ee9ebd366ea51c5d5c7e63d39b7f33c0393cdf346045534b9739204234
+        dest-filename: pixi.tar.gz
+        only-arches:
+          - x86_64
+      - type: file
+        url: https://github.com/prefix-dev/pixi/releases/download/v0.56.0/pixi-aarch64-unknown-linux-musl.tar.gz
+        sha256: 6460a1eddd310bc350ec85f17344600e5237aaaf083c091ec2e62318f5b20f97
+        dest-filename: pixi.tar.gz
+        only-arches:
+          - aarch64
+
   # Open Babel is broken without patched rapidjson
   - name: rapidjson
     buildsystem: cmake-ninja
@@ -72,7 +93,7 @@ modules:
       # Clone but not recursively, only want CMake files and dir structure
       - type: git
         url: https://github.com/OpenChemistry/openchemistry.git
-        commit: f95f4f2405ee8bab0b1e69af68da3dd671cb126c
+        commit: cfa9dee892550a9b45c2e5b8549d40abf21c5a08
         disable-shallow-clone: true
         disable-submodules: true
 
@@ -80,23 +101,23 @@ modules:
       # avogadroapp
       - type: git
         url: https://github.com/OpenChemistry/avogadroapp.git
-        commit: 74312270a94a35e1784f17e31d49fa6b2686f937
+        commit: 13f80aaa88115b7ead103d52ad3f14f7f6f8951a
         dest: avogadroapp
       # avogadrolibs
       - type: git
         url: https://github.com/OpenChemistry/avogadrolibs.git
-        commit: 8487945127819916acf2b1c957a089e1f487c43d
+        commit: c466e4f310ac56264af73078c19e511604478a4c
         dest: avogadrolibs
       # avogadro-i18n
       - type: git
         url: https://github.com/OpenChemistry/avogadro-i18n.git
-        commit: f9c891faebd80ec8f20f0920023d36a9146bb902
+        commit: 9680f87e5f000caa5e9880639efa97333870580f
         dest: avogadro-i18n
-      # avogadrogenerators
+      # avogenerators
       - type: git
         url: https://github.com/OpenChemistry/avogenerators.git
-        commit: f4e3bd7f63664a6844e732e89598bfed48b2c47e
-        dest: avogadrogenerators
+        commit: 4726b3fe5d3bc242567a21aaa4e75df632bab683
+        dest: avogenerators
       # crystals
       - type: git
         url: https://github.com/OpenChemistry/crystals.git
